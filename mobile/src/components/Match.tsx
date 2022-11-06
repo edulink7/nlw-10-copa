@@ -59,6 +59,7 @@ export function Match({ data, setFirstTeamPoints, setSecondTeamPoints, onGuessCo
           code={data.firstTeamCountryCode}
           position="right"
           onChangeText={setFirstTeamPoints}
+          points={data.guess?.firstTeamPoints}
         />
 
         <X color={colors.gray[300]} size={sizes[6]} />
@@ -67,6 +68,7 @@ export function Match({ data, setFirstTeamPoints, setSecondTeamPoints, onGuessCo
           code={data.secondTeamCountryCode}
           position="left"
           onChangeText={setSecondTeamPoints}
+          points={data.guess?.secondTeamPoints}
         />
       </HStack>
 

@@ -7,9 +7,11 @@ interface Props {
   code: string;
   position: 'left' | 'right';
   onChangeText?: (value: string) => void;
+  points: number;
 }
 
-export function Team({ code, position, onChangeText }: Props) {
+export function Team({ code, position, onChangeText, points }: Props) {
+  console.log(code, points);
 
   return (
     <HStack alignItems="center">
@@ -22,6 +24,8 @@ export function Team({ code, position, onChangeText }: Props) {
         fontSize="xs"
         keyboardType="numeric"
         onChangeText={onChangeText}
+        value={points ? String(points) : '' }
+        editable={points === undefined}
       />
 
       {position === 'right' && <CountryFlag isoCode={code} size={25} style={{ marginLeft: 12 }} />}
